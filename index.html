@@ -1,65 +1,77 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/thumb.svg" />
-    <link rel="stylesheet" href="/src/index.css" />
-    <title>Rock Paper Scissors</title>
-  </head>
-  <body>
-    <!-- Header-Bereich -->
-    <header>
-      <h1>Rock Paper Scissors</h1>
-      <div>
-        <span>Score</span>
-        <span id="score">0</span>
-      </div>
-    </header>
 
-    <!-- Hauptbereich mit Buttons -->
-    <main>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <button data-choice="paper">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/thumb.svg" />
+  <script type="module" defer src="/src/main.js"></script>
+  <title>Rock Paper Scissors</title>
+</head>
+
+<body class="font-metalmania">
+  <!-- Header-Bereich -->
+  <header class="text-center py-4">
+    <h1 class="text-4xl font-bold">Rock Paper Scissors</h1>
+    <div class="mt-2">
+      <span class="text-xl">Score</span>
+      <span id="score" class="text-xl font-semibold">0</span>
+    </div>
+  </header>
+
+  <!-- Hauptbereich mit Buttons -->
+  <main class="flex justify-center items-center flex-col mt-12">
+    <!-- Füge den Regeln-Button hinzu -->
+    <button id="rulesbutton" class="hidden">Show Rules</button>
+
+    <div class="space-y-8">
+      <button data-choice="paper" class="btn btn-paper">
         <img src="/images/paper.svg" alt="Paper" />
       </button>
-      <button data-choice="scissors">
+      <button data-choice="scissors" class="btn btn-scissors">
         <img src="/images/scissors.svg" alt="Scissors" />
       </button>
-      <button data-choice="rock">
+      <button data-choice="rock" class="btn btn-rock">
         <img src="/images/rock.svg" alt="Rock" />
       </button>
-    </main>
-
-    <!-- Startbildschirm -->
-    <div id="startscreen">
-      <h1>Rock</h1>
-      <h2>Paper</h2>
-      <h3>Scissors</h3>
-      <button id="startbutton">Start Game</button>
     </div>
+  </main>
 
-    <!-- Regeln -->
-    <div id="rules">
-      <h2>Rules</h2>
-      <p>Rock Paper Scissors is a game that is played between two players...</p>
-      <img src="./images/close.svg" alt="Close" id="closebutton" />
+  <!-- Startbildschirm -->
+  <div id="startscreen"
+    class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="text-center">
+      <h1 class="text-5xl text-white">Rock</h1>
+      <h2 class="text-4xl text-white">Paper</h2>
+      <h3 class="text-3xl text-white">Scissors</h3>
+      <button id="startbutton" class="mt-6 py-2 px-6 bg-yellow-500 text-white rounded-lg shadow-md">Start Game</button>
     </div>
+  </div>
 
-    <!-- Ergebnisanzeige -->
-    <div id="results">
-      <h3 id="result">You win</h3>
-      <div>
-        <p>You chose:</p>
-        <div id="userchoice"></div>
-      </div>
-      <div>
-        <p>Computer chose:</p>
-        <div id="computerchoice"></div>
-      </div>
-      <button id="playagain">Play Again</button>
+  <!-- Regeln -->
+  <div id="rules"
+    class="hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+      <h2 class="text-3xl font-bold">Rules</h2>
+      <p class="mt-4 text-xl">Rock Paper Scissors is a game that is played between two players...</p>
+      <img src="./images/close.svg" alt="Close" id="closebutton"
+        class="absolute top-4 right-4 w-6 h-6 cursor-pointer" />
     </div>
-  </body>
+  </div>
+
+  <!-- Ergebnisanzeige -->
+  <div id="results" class="hidden text-center mt-12">
+    <h3 id="result" class="text-3xl font-bold text-green-500">You win</h3>
+    <div>
+      <p class="text-xl">You chose:</p>
+      <div id="userchoice" class="text-xl"></div>
+    </div>
+    <div>
+      <p class="text-xl">Computer chose:</p>
+      <div id="computerchoice" class="text-xl"></div>
+    </div>
+    <button id="playagain" class="mt-6 py-2 px-6 bg-gray-500 text-white rounded-lg shadow-md">Play Again</button>
+  </div>
+</body>
+
 </html>

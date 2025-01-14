@@ -3,32 +3,37 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Metalmania';
-  src: url('/fonts/Metalmania-Regular.ttf');
+    font-family: 'Metalmania';
+    src: url('/fonts/Metalmania-Regular.ttf') format('truetype');
 }
 
 body {
-  font-family: 'Metalmania', sans-serif;
+    @apply font-metalmania;
 }
+
 
 #startscreen,
 #rules,
 #results {
-  display: none;
+    display: none;
 }
 
 .btn-paper {
-  @apply btn bg-blue-500 hover:bg-blue-600;
+    @apply btn bg-blue-500 hover:bg-blue-600;
 }
 
 .btn-scissors {
-  @apply btn bg-red-500 hover:bg-red-600;
+    @apply btn bg-red-500 hover:bg-red-600;
 }
 
 .btn-rock {
-  @apply btn bg-gray-500 hover:bg-gray-600;
+    @apply btn bg-gray-500 hover:bg-gray-600;
 }
 
 .btn {
-  @apply flex justify-center items-center w-24 h-24 rounded-lg shadow-md transition-transform transform hover:scale-105;
+    @apply flex justify-center items-center w-24 h-24 rounded-lg shadow-md transition-transform transform hover:scale-105;
+}
+
+.font-metalmania {
+    font-family: 'Metalmania', sans-serif;
 }

@@ -2,8 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        metalmania: ['Metalmania', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
-
